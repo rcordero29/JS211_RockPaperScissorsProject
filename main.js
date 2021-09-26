@@ -34,7 +34,6 @@ const rockPaperScissors = (hand1, hand2) => {
   // Write code here
   // Use the unit test to see what is expected
 };
-const removeSpaces = (Str) => strictEqual.replace(answer1, answer2);
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
@@ -47,6 +46,13 @@ function getPrompt() {
     });
   });
 }
+
+let wrongWord = ('Please enter correct vaules')
+let hand1 = hand1
+let hand2 = hand2
+  if (hand1 || hand2 !== 'rock', 'paper','scissors')
+  return wrongWord;
+
 
 // Unit Tests
 // to use them run the command: npm test main.js
@@ -69,8 +75,25 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), 'Hand two wins!');
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), 'Hand one wins!');
     });
+    it('Check for space before and after text', () => {
+      assert.equal(rockPaperScissors('rOcK', ' paper '), 'Hand two wins!');
+      assert.equal(rockPaperScissors('Paper', 'SCISSORS'), 'Hand two wins!');
+      assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), 'Hand one wins!');
+    });
+    it('if text other than rock, paper , scissors', () => {
+      assert.equal(rockPaperScissors('pizza', 'grapes'), 'Please enter correct vaules');
+    });
+    
   });
-} else {
+  }
+else {
   // always returns ask the user for another input
   getPrompt();
 }
+
+
+
+
+// -What if a user adds a space before or after their input?
+// -What if the user hit ENTER before typing in an input?
+// -Brainstorm with your classmates to test for even more edge cases.
